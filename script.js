@@ -1,4 +1,7 @@
 const video = document.getElementById('video')
+let counter = 0;
+let prevX = 0;
+let prevY = 0;
 
 Promise.all([
   faceapi.nets.tinyFaceDetector.loadFromUri('/models'),
@@ -21,7 +24,23 @@ video.addEventListener('play', () => {
   const displaySize = { width: video.width, height: video.height }
   faceapi.matchDimensions(canvas, displaySize)
   setInterval(async () => {
+    counter = counter + 1;
+    console.log(counter) 
     const detections = await faceapi.detectAllFaces(video, new faceapi.TinyFaceDetectorOptions()).withFaceLandmarks().withFaceExpressions()
+    // console.log(detections)
+    const nose = detections[0].landmarks.getNose()
+    if ( counter % 17 == 0 ) {
+      console.log('entro al counter')
+      prevX = nose[0].x
+      prevY = nose[0].y
+    }
+
+    if (nose[0].x < (prevX - nose[0].x * 0.5)) {
+      console.log('ACA PERRO CAJEATALA PIOLA')
+      prevX = 0
+      prevY = 0
+    }
+
     const resizedDetections = faceapi.resizeResults(detections, displaySize)
     canvas.getContext('2d').clearRect(0, 0, canvas.width, canvas.height)
     faceapi.draw.drawDetections(canvas, resizedDetections)
