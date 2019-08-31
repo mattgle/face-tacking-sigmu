@@ -14,17 +14,47 @@
       width: 100vw;
       height: 100vh;
       display: flex;
-      justify-content: center;
-      align-items: center;
-      background-color:cornflowerblue;
+      background-color: #262e31
     }
 
     canvas {
       position: absolute;
     }
+
+    .options-container {
+      max-width: 350px;
+      width: 100%;
+      align-self: center
+    }
+
+    .options {
+      color: #00EFFF;
+      margin: 20px;
+      font-family: 'arial';
+      font-size: 30px;
+      margin-bottom: 10px;
+    }
+
+    .options-selected {
+      color: #F7F7F7;
+      margin: 20px;
+      font-family: 'arial';
+      font-size: 30px;
+      margin-bottom: 10px;
+    }
+
+    .image {
+      margin: 20px;
+    }
   </style>
 </head>
 <body>
+  <img height="200" class="image" width="200" src="./assets/logo.png" />
   <video id="video"  autoplay muted></video>
+  <div class="options-container">
+    <p id="option1" class="options">Opción 1</p>
+    <p id="option2" class="options">Opción 2</p>
+    <p id="option3" class="options">Opción 3</p>
+  </div>
 </body>
 </html>

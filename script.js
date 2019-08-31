@@ -2,6 +2,7 @@ const video = document.getElementById('video')
 let counter = 0;
 let prevX = 0;
 let prevY = 0;
+let selectedOption = 0;
 
 video.width = window.innerWidth;
 video.height = window.innerHeight;
@@ -19,6 +20,11 @@ function startVideo() {
     stream => video.srcObject = stream,
     err => console.error(err)
   )
+}
+
+function markOption() {
+  // markOption(selectedOption + 1);
+  selectedOption = selectedOption + 1 ; 
 }
 
 video.addEventListener('play', () => {
