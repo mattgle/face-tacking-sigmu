@@ -29,7 +29,6 @@ function moveCursor() {
   next()
   const itemSelected = document.getElementById(`option${selectedOption}`)
   itemSelected.classList.add('options-selected')
-  debugger
   const previousItem = document.getElementById(`option${selectedOption - 1}`)
   previousItem.classList.remove('options-selected')
 }
