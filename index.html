@@ -28,7 +28,7 @@
     }
 
     .options {
-      color: #00EFFF;
+      color: #F7F7F7;
       margin: 20px;
       font-family: 'arial';
       font-size: 30px;
@@ -43,9 +43,29 @@
       margin-bottom: 10px;
     }
 
+    .options-on-focus {
+        color: #00EFFF;
+        margin: 20px;
+        font-family: 'arial';
+        font-size: 30px;
+        margin-bottom: 10px;
+
+        text-decoration-line: underline;
+        text-decoration-color: #00EFFF;
+    }
+
+    .chevron {
+      visibility: hidden;
+    }
+
+    .chevron-focus {
+      visibility: visible;
+    }
+
     .image {
       margin: 20px;
     }
+    
   </style>
 </head>
 <body>
@@ -53,8 +73,11 @@
   <video id="video"  autoplay muted></video>
   <div class="options-container">
     <p id="option1" class="options">Opción 1</p>
+    <img class="chevron" src="./assets/chevron.png" />
     <p id="option2" class="options">Opción 2</p>
+    <img class="chevron" src="./assets/chevron.png" />
     <p id="option3" class="options">Opción 3</p>
+    <img class="chevron" src="./assets/chevron.png" />
   </div>
 </body>
 </html>
