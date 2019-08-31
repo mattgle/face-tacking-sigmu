@@ -35,12 +35,12 @@ video.addEventListener('play', () => {
       prevY = nose[0].y
     }
 
-    if (nose[0].x < (prevX - nose[0].x * 0.35)) {
+    if (nose[0].x < (prevX - nose[0].x * 0.30)) {
       console.log('GESTO DERECHA')
       prevX = 10
     }
 
-    if (nose[0].y < (prevY - nose[0].y * 0.35)) {
+    if (nose[0].y < (prevY - nose[0].y * 0.20)) {
       console.log('GESTO UP')
       prevY = 10
     }
