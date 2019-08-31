@@ -1,7 +1,6 @@
 const video = document.getElementById('video')
 let counter = 0;
 let prevX = 0;
-let prevY = 0;
 
 Promise.all([
   faceapi.nets.tinyFaceDetector.loadFromUri('/models'),
@@ -36,9 +35,13 @@ video.addEventListener('play', () => {
     }
 
     if (nose[0].x < (prevX - nose[0].x * 0.35)) {
-      console.log('ACA PERRO CAJEATALA PIOLA')
+      console.log('GESTO DERECHA')
       prevX = 10
-      prevY = 10
+    }
+
+    if (nose[0].X > (prevX - nose[0].x * 0.35)) {
+      console.log('GESTO IZQUIERDA')
+      prevX = 10
     }
 
     const resizedDetections = faceapi.resizeResults(detections, displaySize)
