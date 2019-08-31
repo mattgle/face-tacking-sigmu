@@ -35,34 +35,32 @@
       margin-bottom: 10px;
     }
 
-    .option-focus {
-      color: 'red'
-    }
-
     .options-selected {
       color: #00EFFF;
     }
 
-    .first-selected {
-      color: #00EFFF;
-      margin: 20px;
-      font-family: 'arial';
-      font-size: 30px;
-      margin-bottom: 10px;
+    .option-focus {
+      color: red;
     }
 
     .image {
       margin: 20px;
     }
+
+    .controls-overlay {
+      position: absolute;
+    }
   </style>
 </head>
 <body>
-  <img height="200" class="image" width="200" src="./assets/logo.png" />
   <video id="video"  autoplay muted></video>
-  <div class="options-container">
-    <div id="option1" class="first-selected">Opción 1</div>
-    <div id="option2" class="options">Opción 2</div>
-    <div id="option3" class="options">Opción 3</div>
+  <div class="controls-overlay">
+    <img height="200" class="image" width="200" src="./assets/logo.png" />
+    <div class="options-container">
+      <div id="option1" class="options options-selected">Opción 1</div>
+      <div id="option2" class="options">Opción 2</div>
+      <div id="option3" class="options">Opción 3</div>
+    </div>
   </div>
 </body>
 </html>

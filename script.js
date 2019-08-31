@@ -22,6 +22,18 @@ function startVideo() {
   )
 }
 
+const firstItem = document.getElementById(`option${selectedOption}`)
+firstItem.classList.add('options-selected')
+
+function moveCursor() {
+  next()
+  const itemSelected = document.getElementById(`option${selectedOption}`)
+  itemSelected.classList.add('options-selected')
+  debugger
+  const previousItem = document.getElementById(`option${selectedOption - 1}`)
+  previousItem.classList.remove('options-selected')
+}
+
 function select() {
   const itemSelected = document.getElementById(`option${selectedOption}`)
   itemSelected.classList.add('options-selected')
@@ -60,9 +72,7 @@ video.addEventListener('play', () => {
 
     if (nose[0].x < (prevX - nose[0].x * 0.30)) {
       console.log('GESTO DERECHA')
-      unSelect();
-      next();
-      select();
+      moveCursor()
       prevX = 10
     }
 
