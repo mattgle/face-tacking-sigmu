@@ -35,10 +35,10 @@ video.addEventListener('play', () => {
       prevY = nose[0].y
     }
 
-    if (nose[0].x < (prevX - nose[0].x * 0.5)) {
+    if (nose[0].x < (prevX - nose[0].x * 0.35)) {
       console.log('ACA PERRO CAJEATALA PIOLA')
-      prevX = 0
-      prevY = 0
+      prevX = 10
+      prevY = 10
     }
 
     const resizedDetections = faceapi.resizeResults(detections, displaySize)
