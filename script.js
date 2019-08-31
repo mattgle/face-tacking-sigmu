@@ -3,6 +3,9 @@ let counter = 0;
 let prevX = 0;
 let prevY = 0;
 
+video.width = window.innerWidth;
+video.height = window.innerHeight;
+
 Promise.all([
   faceapi.nets.tinyFaceDetector.loadFromUri('/models'),
   faceapi.nets.faceLandmark68Net.loadFromUri('/models'),
