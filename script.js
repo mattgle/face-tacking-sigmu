@@ -2,7 +2,7 @@ const video = document.getElementById('video')
 let counter = 0;
 let prevX = 0;
 let prevY = 0;
-let selectedOption = 0;
+let selectedOption = 1;
 
 video.width = window.innerWidth;
 video.height = window.innerHeight;
@@ -22,8 +22,22 @@ function startVideo() {
   )
 }
 
-function markOption() {
-  // markOption(selectedOption + 1);
+function select() {
+  const itemSelected = document.getElementById(`option${selectedOption}`)
+  itemSelected.classList.add('options-selected')
+}
+
+function unSelect() {
+  const itemSelected = document.getElementById(`option${selectedOption}`)
+  itemSelected.classList = optionSelected.classList.filter(classCSS => classCSS !== 'options-selected')
+}
+
+function mark() {
+  const itemSelected = document.getElementById(`option${selectedOption}`)
+  itemSelected.classList.add('option-focus') 
+}
+
+function next() {
   selectedOption = selectedOption + 1 ; 
 }
 
@@ -46,11 +60,15 @@ video.addEventListener('play', () => {
 
     if (nose[0].x < (prevX - nose[0].x * 0.30)) {
       console.log('GESTO DERECHA')
+      unSelect();
+      next();
+      select();
       prevX = 10
     }
 
     if (nose[0].y < (prevY - nose[0].y * 0.20)) {
       console.log('GESTO UP')
+      mark();
       prevY = 10
     }
 
