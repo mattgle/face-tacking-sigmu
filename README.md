@@ -1,4 +1,4 @@
-# face-tacking-sigmu
+# face-tracking-sigmu
 
 This project was made at the Wolox Hackathon on 2019. We won the "Best Proyect" award.
 
